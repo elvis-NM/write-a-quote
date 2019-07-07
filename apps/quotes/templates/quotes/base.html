@@ -1,0 +1,289 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title> {% block title %}
+
+        {% endblock title %}</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+        integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    {% load staticfiles %}
+    <link rel="stylesheet" href="{% static 'quotes/css/style.css' %}" media="screen" title="no title" charset="utf-8">
+    <style>
+        body {
+            background-color: dodgerblue;
+            color: whitesmoke;
+            width: auto;
+            height: auto;
+
+        }
+
+        .container-fluid {
+            background-color: deeppink;
+            width: auto;
+            height: auto;
+            margin: 0px 160px 0px 160px;
+            padding: 160px 40px 220px 40px;
+            border: 0px solid whitesmoke;
+            border-radius: 0px;
+
+
+        }
+
+
+        h4 {
+            font-size: 33px;
+        }
+
+
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                -webkit-transform: translate3d(0, -100%, 0);
+                transform: translate3d(0, -100%, 0);
+            }
+
+            to {
+                opacity: 1;
+                -webkit-transform: translate3d(0, 0, 0);
+                transform: translate3d(0, 0, 0);
+            }
+        }
+
+        .fadeInDown {
+            -webkit-animation-name: fadeInDown;
+            animation-name: fadeInDown;
+        }
+
+
+        h2 {
+            /* This section calls the slideInFromrightt animation we defined above */
+            animation: 3s ease-out .7s 1 fadeInDown;
+        }
+
+
+        li {
+            /* This section calls the slideInFromrightt animation we defined above */
+            animation: 3s ease-out .5s 1 fadeInDown;
+        }
+
+
+
+        div.jumbotron {
+            background-color: black;
+            width: auto;
+            height: auto;
+            margin: auto;
+            padding: 30px 0px 30px 0px;
+            border-radius: 0px;
+            font-family: monospace;
+            font-size: 33px;
+
+        }
+
+
+
+        #header,
+        Ul,
+        li,
+        h1 {
+            display: inline-block;
+            vertical-align: top;
+            padding: 0px 0px 0px 10px;
+            color: white;
+            margin-left: 30px;
+            font-size: 28px;
+
+        }
+
+        Ul#header {
+            margin: 20px 0px 0px 0px;
+            height: 42px;
+            width: 960px;
+        }
+
+        h2 {
+            margin: 0px 0px 0px 0px;
+            padding: 0px 0px 0px 0px;
+            height: 72px;
+            font-size: 60px;
+            font-family: monospace;
+        }
+
+        #footer,
+        a {
+
+            vertical-align: top;
+            color: rgb(14, 81, 126);
+            text-align: center;
+            padding: 5px 30px 5px 0px;
+            font-size: 18px;
+        }
+
+
+
+
+        #footer {
+            background-color: rgb(210, 230, 248);
+
+            border-radius: 10px;
+            margin-top: 40px;
+
+
+        }
+
+        .spans {
+            color: rgb(23, 95, 179);
+        }
+
+        #icon001 {
+            height: 68px;
+            width: 68px;
+        }
+
+
+        @-webkit-keyframes bounce {
+
+            from,
+            20%,
+            53%,
+            80%,
+            to {
+                -webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+                animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+                -webkit-transform: translate3d(0, 0, 0);
+                transform: translate3d(0, 0, 0);
+            }
+
+            40%,
+            43% {
+                -webkit-animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+                animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+                -webkit-transform: translate3d(0, -30px, 0);
+                transform: translate3d(0, -30px, 0);
+            }
+
+            70% {
+                -webkit-animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+                animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+                -webkit-transform: translate3d(0, -15px, 0);
+                transform: translate3d(0, -15px, 0);
+            }
+
+            90% {
+                -webkit-transform: translate3d(0, -4px, 0);
+                transform: translate3d(0, -4px, 0);
+            }
+        }
+
+        @keyframes bounce {
+
+            from,
+            20%,
+            53%,
+            80%,
+            to {
+                -webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+                animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+                -webkit-transform: translate3d(0, 0, 0);
+                transform: translate3d(0, 0, 0);
+            }
+
+            40%,
+            43% {
+                -webkit-animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+                animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+                -webkit-transform: translate3d(0, -30px, 0);
+                transform: translate3d(0, -30px, 0);
+            }
+
+            70% {
+                -webkit-animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+                animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+                -webkit-transform: translate3d(0, -15px, 0);
+                transform: translate3d(0, -15px, 0);
+            }
+
+            90% {
+                -webkit-transform: translate3d(0, -4px, 0);
+                transform: translate3d(0, -4px, 0);
+            }
+        }
+
+        .bounce {
+            -webkit-animation-name: bounce;
+            animation-name: bounce;
+            -webkit-transform-origin: center bottom;
+            transform-origin: center bottom;
+        }
+
+
+        #icon001 {
+            /* This section calls the slideInFromrightt animation we defined above */
+            animation: 1s ease-out .3s 20 bounce;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="jumbotron">
+        <h2>Elvis's <span class="spans">Portfolio</span></h2>
+
+        <Ul id="header">
+            <a href="#">
+                <li> <span class="spans">
+                        Home
+                    </span></li>
+            </a>
+            <a href="#">
+                <li> <span class="spans">
+                        Aboutme
+                    </span></li>
+            </a>
+
+            <a href="#">
+                <li> Python/Django </li>
+            </a>
+            <a href="#">
+                <li>C#/ASP.NETcore </li>
+            </a>
+        </Ul>
+        <a href="">
+            <img id="icon001" src='{% static "quotes/images/python.png" %}' alt="python"></a>
+    </div>
+    <div class='container-fluid'>
+
+        {% block content %}{% endblock content %}
+        <footer class="fixed-bottom">
+
+            <div id="footer">
+                <a href="#"> Home </a>
+                <a href="#"> About </a>
+                <a href="#"> Python/Django</a>
+                <a href="#"> C#/ASP.NETcore<a>
+                        <a href=""> Contact</a>
+
+
+            </div>
+
+
+        </footer>
+
+
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+            integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+            crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+            integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+            crossorigin="anonymous"></script>
+</body>
+
+</html>

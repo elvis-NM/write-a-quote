@@ -1,0 +1,30 @@
+{% extends "quotes/base.html" %}
+
+{% block title %} View {% endblock title%}
+{% block content %}
+
+
+<a href="{% url 'quotes:index'  %}" class="btn btn-info" role="button">
+    <h4>Goback</h4>
+</a> <br>
+<hr>
+
+<h1> Quotes</h1> <br>
+<hr>
+
+{%for quote in quotes %}
+
+
+<div class="resizequote">
+    <h3>Author: {{ quote.author}}</h3>
+    <h3>Quote: {{ quote.quote}}</h3> <br>
+    <hr>
+
+
+    {%endfor%}
+
+
+</div>
+
+
+{% endblock content %}

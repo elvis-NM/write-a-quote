@@ -1,0 +1,44 @@
+{% extends "quotes/base.html" %}
+
+{% block title %} Edit {% endblock title %}
+
+{% block content %}
+
+<h3>Hello {{ user.first_name }} {{ user.last_name }} ! Lets edit your quote </h3>
+
+<a href="{% url 'users:logout' %}" class="button">
+    <h4>Logout</h4>
+</a>
+<a href="{% url 'quotes:index'  %}" class="button">
+    <h4>Goback</h4>
+</a>
+<hr>
+
+
+{% if messages %}
+<ul class="messages">
+    {% for message in messages %}
+    <li {% if message.tags %} class="{{ message.tags }}" {% endif %}>{{ message }}</li>
+    {% endfor %}
+</ul>
+{% endif %}
+<form action="{% url 'quotes:update' quote.id%}" method='post'>
+    {% csrf_token %}
+    <div class="form-group">
+        <p> <label for="name">Author of your Quote :</label> </p>
+        <P> <input type="text" class="form-control" name="author" value="{{ quote.author }}">
+        </p>
+    </div>
+
+    <div class="form-group">
+        <p><label for="quote">Quote:</label></p>
+        <textarea name="quote" id="" cols="60" rows="5">"{{ quote.quote }}"</textarea>
+    </div>
+
+
+
+    <input class="form-control" type="submit" value="edit">
+
+
+</form>
+{% endblock content %}

@@ -1,0 +1,104 @@
+{% extends "quotes/base.html" %}
+
+{% block title %}
+quotes
+{% endblock title %}
+
+
+{% block content %}
+
+
+
+<h1> Welcome {{ user.first_name }} {{ user.last_name }}! </h1><br>
+<h3> You have Successfully Logged In! </h3><br>
+<hr>
+
+
+<a href="{% url 'users:edit' user.id %}" class="button">
+    <h4>Edit My Account</h4>
+</a>
+<a href="{% url 'users:logout'  %}" class="button">
+    <h4>Logout</h4>
+</a>
+<hr>
+
+
+<h1>Write a favorite Quote! </h1><br>
+<h1>-You can delete or edit only your own quotes.
+</h1><br>
+<h1>-You can't like or unlike your own quotes only other users can.</h1><br>
+<h1>-See how popular your quotes are </h1><br>
+<h1>-You are encouraged to like other users quotes that pick your ineterets. </h1><br>
+<h1>-Select your first name beside your posts to view posts by all users</h1><br>
+<br>
+<hr>
+
+
+
+{%for quote in quotes%}
+<h3>Author: {{ quote.author}}</h3>
+<h3>Quote: {{ quote.quote}}</h3>
+<h3>Posted by : <a href="{% url 'quotes:view' %}" role="link">{{ quote.creator.first_name }}</a>
+    {{quote.likes.count }} |
+
+    {%if user.id is quote.creator_id %}
+
+    <a href="{% url 'quotes:edit' quote.id %}" class="button">Edit</a>|
+
+    <form action="{% url 'quotes:delete' quote.id%}" method='post'>
+        {% csrf_token %}
+        <input type="submit" value="Delete">
+    </form>
+
+    {% else %}
+
+
+    {%if user in quote.likes.all%}
+
+
+    <a href="{% url 'quotes:unlike' quote.id %}" class="button">Unlike</a>
+
+    {% else %}
+
+    <a href="{% url 'quotes:like' quote.id %}" class="button">Like</a>|
+    {%endif%}
+</h3>
+{%endif%} <br><br>
+<hr>
+{%endfor%}
+
+
+
+
+
+
+
+
+{% if messages %}
+<ul class="messages">
+    {% for message in messages %}
+    <li {% if message.tags %} class="{{ message.tags }}" {% endif %}>{{ message }}</li>
+    {% endfor %}
+</ul>
+{% endif %}
+<h1>Add a Quote</h1>
+<form action="{% url 'quotes:create' %}" method='post'>
+    {% csrf_token %}
+    <div class="form-group">
+        <p> <label for="author">Author:</label> </p>
+        <P> <input type="text" class="form-control" name="author" placeholder=" authors name"> </p>
+    </div>
+
+    <div class="form-group">
+        <p><label for="quote">Quote:</label></p>
+        <textarea name="quote" id="" cols="60" rows="5"></textarea>
+    </div>
+
+    <input class="form-control" type="submit" value="Submit">
+
+</form>
+
+
+
+
+{% endblock content %}
