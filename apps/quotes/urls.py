@@ -13,5 +13,10 @@ urlpatterns = [
     url(r"^delete/(?P<quote_id>\d+)/$", views.delete, name="delete"),
     url(r"^like/(?P<quote_id>\d+)/$", views.like, name="like"),
     url(r"^unlike/(?P<quote_id>\d+)/$", views.unlike, name="unlike"),
+    url(r"^home/$", views.home, name="home"),
+    url(r"^python/$", views.python, name="python"),
+    url(r"^about/$", views.about, name="about"),
+    url(r"^csharp/$", views.csharp, name="csharp"),
+    url(r"^contact/$", views.contact, name="contact"),
 ]
 

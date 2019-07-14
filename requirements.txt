@@ -5,6 +5,7 @@ cffi==1.11.5
 decorator==4.3.2
 Django==1.10
 django-crispy-forms==1.7.2
+html5lib==1.0.1
 ipython==7.2.0
 ipython-genutils==0.2.0
 jedi==0.13.2
@@ -16,6 +17,7 @@ prompt-toolkit==2.0.7
 ptyprocess==0.6.0
 pycparser==2.19
 Pygments==2.3.1
+PyPDF2==1.26.0
 PySoundFile==0.9.0.post1
 pytz==2019.1
 reportlab==3.5.23
@@ -25,3 +27,5 @@ sqlparse==0.3.0
 traitlets==4.3.2
 virtualenv==16.6.1
 wcwidth==0.1.7
+webencodings==0.5.1
+xhtml2pdf==0.2.3

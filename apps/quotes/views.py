@@ -88,3 +88,23 @@ def like(req, quote_id):
 def unlike(req, quote_id):
     Quote.objects.remove_like(req.session["user_id"], quote_id)
     return redirect("quotes:index")
+
+
+def home(req):
+    return redirect("http://http://18.220.137.34/")
+
+
+def about(req):
+    return redirect("http://http://18.220.137.34/about/")
+
+
+def python(req):
+    return redirect("http://http://18.220.137.34/python/")
+
+
+def csharp(req):
+    return redirect("http://http://18.220.137.34/csharp/")
+
+
+def contact(req):
+    return redirect("http://http://18.220.137.34/about/Pdf/")

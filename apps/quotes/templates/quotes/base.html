@@ -38,7 +38,6 @@
         }
 
 
-
         @keyframes fadeInDown {
             from {
                 opacity: 0;
@@ -235,25 +234,25 @@
         <h2>Elvis's <span class="spans">Portfolio</span></h2>
 
         <Ul id="header">
-            <a href="#">
+            <a href="{% url 'quotes:home' %}">
                 <li> <span class="spans">
                         Home
                     </span></li>
             </a>
-            <a href="#">
+            <a href="{% url 'quotes:about' %}">
                 <li> <span class="spans">
                         Aboutme
                     </span></li>
             </a>
 
-            <a href="#">
+            <a href="{% url 'quotes:python' %}">
                 <li> Python/Django </li>
             </a>
-            <a href="#">
+            <a href="{% url 'quotes:csharp' %}">
                 <li>C#/ASP.NETcore </li>
             </a>
         </Ul>
-        <a href="">
+        <a href="{% url 'quotes:python' %}">
             <img id="icon001" src='{% static "quotes/images/python.png" %}' alt="python"></a>
     </div>
     <div class='container-fluid'>
@@ -262,11 +261,11 @@
         <footer class="fixed-bottom">
 
             <div id="footer">
-                <a href="#"> Home </a>
-                <a href="#"> About </a>
-                <a href="#"> Python/Django</a>
-                <a href="#"> C#/ASP.NETcore<a>
-                        <a href=""> Contact</a>
+                <a href="{% url 'quotes:home' %}"> Home </a>
+                <a href="{% url 'quotes:about' %}"> About </a>
+                <a href="{% url 'quotes:python' %}"> Python/Django</a>
+                <a href="{% url 'quotes:csharp' %}"> C#/ASP.NETcore<a>
+                        <a href="{% url 'quotes:contact' %}"> Contact</a>
 
 
             </div>
