@@ -3,7 +3,7 @@ backcall==0.1.0
 bcrypt==3.1.6
 cffi==1.11.5
 decorator==4.3.2
-Django==1.10
+Django==2.2.24
 django-crispy-forms==1.7.2
 html5lib==1.0.1
 ipython==7.2.0
